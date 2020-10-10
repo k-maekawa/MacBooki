@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   
-   before_action :authenticate_user!
+   before_action :authenticate_user
 
   def create
     logger.debug "*"*100
