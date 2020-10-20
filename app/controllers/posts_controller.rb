@@ -11,7 +11,7 @@ class PostsController < ApplicationController
     @user = @post.user
     @post = Post.find(params[:id])
     @comments = @post.comments
-    @comment = @comments.new
+    @comment = Comment.new
   end
    
   
