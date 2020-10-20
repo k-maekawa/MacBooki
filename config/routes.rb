@@ -19,7 +19,8 @@ Rails.application.routes.draw do
   get "posts/new" => "posts#new"
   get "posts/:id" => "posts#show", as: :post
    
-  resources :comments, only: [:create]
+  resources :comments, only: [:create,:destroy]
+
   
   
   post "posts/create" => "posts#create"
