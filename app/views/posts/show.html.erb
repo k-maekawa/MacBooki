@@ -24,8 +24,7 @@
   <% @comments.each do |c| %>
     <div>
       <% unless c.user.blank? %>
-         <a href="<%= (c.user_id) %>">
-          <img src="<%= "/user_images/#{c.user.image_name}" %>"></a>
+          <img src="<%= "/user_images/#{c.user.image_name}" %>">
         <% end %>
       <%= c.user.name unless c.user.blank? %>
       <br />
