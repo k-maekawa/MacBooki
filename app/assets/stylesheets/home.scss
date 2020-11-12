@@ -40,9 +40,10 @@ form input[type="submit"] {
 /* 共通レイアウト ================================ */
 body {
   color: #2d3133;
-  background-color: #3ecdc6;
+  background-color: #fabea7;
   margin: 0;
   min-height: 1vh;
+
 }
 
 .main {
@@ -51,7 +52,9 @@ body {
   width: 100%;
   height: auto;
   min-height: 100%;
-  background-color: #f5f8fa;
+  background-color: #fabea7;
+  text-align: center;
+  
 }
 
 .container {
@@ -150,9 +153,11 @@ header {
 
 /* about ================================ */
 .about-main {
-  padding: 180px 8% 0;
+  padding: 200px 0 100px;
   color: white;
+  text-align: center;
 }
+
 
 .about-main h2 {
   font-size: 64px;
@@ -166,7 +171,8 @@ header {
 }
 
 .about-img {
-  width: 84%;
+  width: 50%;
+  height: 10%;
 }
 
 /* フォーム================================ */
@@ -175,17 +181,24 @@ header {
   margin: 0 auto;
   background-color: white;
   box-shadow: 0 2px 6px #c1ced7;
+  opacity: 0.9;
+
+
 }
 
 .form-heading {
   font-weight: 300;
   margin: 60px 0 20px;
   font-size: 48px;
-  color: #bcc8d4;
+
+
+
 }
 
 .form-body {
   padding: 30px;
+
+
 }
 
 .form-error {
@@ -200,6 +213,8 @@ header {
   font-size: 16px;
   letter-spacing: 2px;
   border-radius: 2px;
+
+
 }
 
 .form textarea {

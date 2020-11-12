@@ -5,7 +5,8 @@
   font-weight: 300;
   margin: 60px 0 20px;
   font-size: 48px;
-  color: #bcc8d4;
+  font-weight: bold;
+  color: #000;
 }
 
 .users-index-item {
@@ -46,6 +47,10 @@
   vertical-align: middle;
 }
 
+
+
+
+
 /* users/show ================================ */
 .user-show {
   text-align: center;
@@ -53,6 +58,8 @@
 
 .user {
   margin-bottom: 20px;
+  background-color: #ffffff;
+    box-shadow: 0 2px 6px #c1ced7;
 }
 
 .user img {
@@ -73,6 +80,7 @@
 .user p {
   font-size: 13px;
   margin-bottom: 15px;
+
 }
 
 .user a {
@@ -112,7 +120,27 @@
   color: #afb6bf;
 }
 
+
+
+
 /* users/new, users/edit ================================ */
 .users-form input {
   margin-bottom: 15px;
+}
+
+.sample  {
+
+  display: flex;
+  white-space: nowrap;
+
+}
+
+.input-group-btn{
+ display: inline-block;
+
+ border: solid 3px #7c7889;
+ border-radius: 3px;
+ margin-bottom: 5px;
+ padding: 0.1px 0.1px;
+
 }
