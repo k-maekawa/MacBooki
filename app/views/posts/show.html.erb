@@ -3,12 +3,15 @@
     <div class="posts-show-item">
       <div class="post-user-name">
         <img src="<%= "/user_images/#{@user.image_name}" %>">
+
         <%= link_to(@user.name, "/users/#{@user.id}") %>
+
       </div>
+
       <p>
         <%= @post.content %>
       </p>
-      
+
       <div class="post-time">
        <%= @post.created_at %>
        </div>
@@ -18,23 +21,26 @@
         <%= link_to("削除", "/posts/#{@post.id}/destroy", {method: "post"}) %>
       </div>
       <% end %>
-      
+
 <div class="comment-wrapper border-top　mb-10">
   <p class="mt-5">コメント一覧</p>
   <% @comments.each do |c| %>
     <div>
       <% unless c.user.blank? %>
-        <a href="<%= user_path(c.user_id) %>"><%= image_tag c.user.image.to_s,
-          class:"rounded-circle icon_image mr-3 mb-3"%></a>
-        <% end %>
-      <%= c.user.username unless c.user.blank? %>
+
+        <img src="<%= "/user_images/#{c.user.image_name}" %>">
+      <% end %>
+      <%= c.user.name unless c.user.blank? %>
       <br />
       <%= c.content %>
+      
+    <%= link_to "削除", comment_path(c), method: :delete %>
     </div>
     <br />
   <% end %>
   <% if user_signed_in? %>
     <%= form_with(model: @comment, url: comments_path, method: :post, local: true) do |f| %>
+    <%= hidden_field_tag :post_id, @post.id %>
       <%= f.text_area :content, class: "form-control", rows: 5 %>
       <%= button_tag type: "submit", class: "btn btn-success float-right mt-1" do %>
         <i class="far fa-comments"></i> コメントする
@@ -43,8 +49,7 @@
   <% end %>
 </div>
     </div>
-   
-  </div>
-  
-</div>
 
+  </div>
+
+</div>

@@ -3,12 +3,24 @@
     <div class="user">
 <img src="<%= "/user_images/#{@user.image_name}" %>">
       <h2><%= @user.name %></h2>
-      <p><%= @user.email %></p>
+
+
+     <% if @user.is_trainer == true %>
+      <h3>トレーナー</h3>
+     <% end %>
+     <% if @user.is_trainer == true %>
+       <P><%= @user.prefecture %><P>
+       <P>MaineGym:<%=@user.mainegym %></P>
+       <p><%= @user.email %></p>
+       プロフィール
+       <p><%= @user.profile %></p>
+     <% end %>
+
       <% if @user.id == @current_user.id %>
       <%= link_to("編集", "/users/#{@user.id}/edit") %>
       <% end %>
     </div>
-    
+
     <% @user.posts.each do |post| %>
     <div class="posts-index-item">
       <div class="post-left">

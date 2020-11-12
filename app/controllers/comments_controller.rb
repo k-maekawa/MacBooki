@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
-  
-   before_action :authenticate_user!
+
+   before_action :authenticate_user
 
   def create
     logger.debug "*"*100
@@ -11,14 +11,21 @@ class CommentsController < ApplicationController
     @comment.user_id = current_user.id
     if @comment.save
       logger.debug "saved"
-      flash[:success] = "コメントしました"
+      flash[:notice] = "コメントしました"
       redirect_to(post)
     else
       logger.debug "failed"
-      flash[:success] = "コメントできませんでした"
+      flash[:notice] = "コメントできませんでした"
       redirect_to(post)
     end
   end
+
+  def destroy
+   comment = Comment.find(params[:id])
+   comment.destroy
+   flash[:notice] = "コメントを削除しました"
+   redirect_to("/posts/index")
+ end
 
   private
 
