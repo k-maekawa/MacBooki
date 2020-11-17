@@ -11,6 +11,11 @@
       <p>
         <%= @post.content %>
       </p>
+      <p>
+    　  <%= link_to @post.video_url.to_s do %>
+    　  <%= video_tag(@post.video.to_s) %>
+    　  <% end %>
+      </p>
 
       <div class="post-time">
        <%= @post.created_at %>
@@ -33,6 +38,7 @@
       <%= c.user.name unless c.user.blank? %>
       <br />
       <%= c.content %>
+      
     <%= link_to "削除", comment_path(c), method: :delete %>
     </div>
     <br />

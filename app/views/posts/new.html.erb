@@ -10,6 +10,11 @@
             </div>
           <% end %>
         <textarea name="content"><%= @post.content %></textarea>
+        <div class="field">
+         <%= form_tag({ :controller => 'posts', :action => 'create' },{ :method => :post})  do %>
+         <%= file_field :video, :accept => 'video/*',class: "field-video" %>
+         <% end %>
+        </div> 
         <input type="submit" value="投稿">
       </div>
     </div>
